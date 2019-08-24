@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="129dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:gravity="center_horizontal"
+        android:textSize="50sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="60dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select your preferences"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:id="@+id/CurrencyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+        />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/CurrencyText"
+            android:layout_toEndOf="@+id/CurrencyText"
+            android:layout_marginLeft="50dp"
+
+
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:id="@+id/nationalityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Nationality"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/nationalityText"
+            android:layout_toEndOf="@+id/nationalityText"
+            android:layout_marginLeft="50dp"
+
+
+            />
+    </RelativeLayout>
+        <Button
+            android:id="@+id/saveButton"
+            android:background="@drawable/button"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="10sp"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="save"
+            style="?android:attr/borderlessButtonStyle"/>
+
+
+</LinearLayout>

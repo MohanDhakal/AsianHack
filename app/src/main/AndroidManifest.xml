@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.asianapp.mohankumardhakal.athithi">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:name=".random.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:name=".random.MainActivity">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:name=".random.MainMenu">
+
+        </activity>
+        <activity android:name=".random.ViewSaved">
+
+        </activity>
+        <activity
+            android:label="Get Your Currency Converted"
+            android:name=".cashprediction.CashDetailActivity"></activity>
+        <activity
+            android:label="Let's Get Familiar"
+            android:name=".foodprediction.FoodDetailActivity">
+
+
+        </activity>
+        <activity android:name=".cashprediction.CashFlow">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:name=".cashprediction.Preference">
+
+        </activity>
+        <activity
+            android:label="Upload Image"
+            android:name=".foodprediction.PythonFlask" />
+        <activity android:name=".foodprediction.SendImageToServerActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+</manifest>
