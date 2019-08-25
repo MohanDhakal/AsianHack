@@ -20,7 +20,7 @@
     <Button
         android:background="@drawable/button_large"
         android:id="@+id/foodDetection"
-        android:text="Food Detection"
+        android:text="Nepali Cuisine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -31,7 +31,7 @@
     <Button
         android:background="@drawable/button_large"
         android:id="@+id/currencyDetection"
-        android:text="Currency Detection"
+        android:text="Currency Converter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -41,11 +41,10 @@
     <Button
         android:background="@drawable/button_large"
         android:id="@+id/hotelFinder"
-        android:text="Hotel Finder"
+        android:text="Hotel Tinder"
         android:layout_width="match_parent"
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:layout_height="wrap_content">
-
     </Button>
 </LinearLayout>

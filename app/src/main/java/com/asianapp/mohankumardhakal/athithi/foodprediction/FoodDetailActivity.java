@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.asianapp.mohankumardhakal.athithi.R;
 import com.asianapp.mohankumardhakal.athithi.random.MainMenu;
 
@@ -38,11 +36,13 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         View view= LayoutInflater.from(FoodDetailActivity.this).inflate(R.layout.dialog_to_choose, null);
         TextView alertMessage=view.findViewById(R.id.alert);
+
         alertMessage.setText(foodType);
         dialog.setContentView(view);
         dialog.show();
         dialog.setCancelable(false);
         Button okay= view.findViewById(R.id.capture);
+
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

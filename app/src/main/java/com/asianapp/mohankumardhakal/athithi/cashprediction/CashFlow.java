@@ -1,4 +1,6 @@
 package com.asianapp.mohankumardhakal.athithi.cashprediction;
+
+import android.app.ProgressDialog;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.asianapp.mohankumardhakal.athithi.R;
+import com.asianapp.mohankumardhakal.athithi.random.MainMenu;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -41,6 +44,7 @@ public class CashFlow extends AppCompatActivity {
     String selectedImagePath;
     ImageButton imageButton;
     Bitmap bitmap;
+    ProgressDialog progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,7 @@ public class CashFlow extends AppCompatActivity {
                 connectServer(v);
             }
         });
+
     }
 
     void connectServer(View v) {
@@ -80,8 +85,16 @@ public class CashFlow extends AppCompatActivity {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("file", "androidFlask.jpg", RequestBody.create(MediaType.parse("image/*jpg"), byteArray))
                 .build();
-        Log.i("Wait", "please wait");
         postRequest(postUrl, postBodyImage);
+        Log.i("Wait", "please wait");
+        progressBar = new ProgressDialog(v.getContext());
+
+        progressBar.setMessage("Uploading.....");
+        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressBar.setIndeterminate(true);
+        progressBar.show();
+
+
     }
 
     void postRequest(String postUrl, RequestBody postBody) {
@@ -137,18 +150,13 @@ public class CashFlow extends AppCompatActivity {
                                 }
 
                             }
+                            progressBar.dismiss();
                             startActivity(intent);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                         Log.i("response", String.valueOf(response.body()));
 
-                        /*TextView responseText = findViewById(R.id.responseText);
-                        try {
-                            responseText.setText(response.body().string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }*/
                     }
                 });
             }
@@ -282,4 +290,10 @@ public class CashFlow extends AppCompatActivity {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CashFlow.this, MainMenu.class));
+        finish();
+    }
 }

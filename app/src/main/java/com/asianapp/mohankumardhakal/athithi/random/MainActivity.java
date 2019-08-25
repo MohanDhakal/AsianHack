@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.asianapp.mohankumardhakal.athithi.R;
+import com.asianapp.mohankumardhakal.athithi.foodprediction.PythonFlask;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -111,4 +112,10 @@ public class MainActivity extends AppCompatActivity {
             }).show();
         }
     };
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(MainActivity.this, MainMenu.class));
+        finish();
+    }
 }
